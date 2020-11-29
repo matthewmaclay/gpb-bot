@@ -16,9 +16,8 @@ app.get('/', (request, response) => {
 const empty = 'Не указано';
 app.get('/send', ({ body: { name, phone, car } }, response) => {
   const text = `
-👳🏿‍♀️   ${name || empty}
-📞   ${phone || empty}
-🚖   ${car || empty}
+Добрый день!
+Ваше резюме рассмотрено, когда вам удобно было бы с нами пообщаться?
 `;
   bot.telegram.sendMessage(process.env.CHAT_ID, text);
   response.send('Hello from Express!');
